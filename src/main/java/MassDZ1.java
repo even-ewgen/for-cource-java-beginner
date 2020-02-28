@@ -1,7 +1,6 @@
-import java.util.Arrays;
 import java.util.Random;
 
-public class MassDZ2 {
+public class MassDZ1 {
 
     public static void main(String[] arg) {
         int[] year = new int[365];

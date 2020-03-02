@@ -6,21 +6,22 @@ public class MassDZ2 {
         Scanner in = new Scanner(System.in);
         System.out.print("Введи длину массива: ");
         int x = in.nextInt();
-        System.out.println();
         System.out.print("Введи ширину массива: ");
         int y = in.nextInt();
-        System.out.println();
 
         int[][] array = new int[x][y];
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++)
-                array[i][j] = i + j + 1;
-        }
-
         System.out.println("Твой массив:");
         for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++)
+            for (int j = 0; j < array[i].length; j++) {
+                if (j % 2 == 0) {
+                    if (j == 0) {
+                        array[i][j] = i + 1;
+                    } else array[i][j] = array[i][j - 1] + (i*2+1);
+                } else {
+                    array[i][j] = array[i][j - 1] + (array.length*2 - (i*2 + 1));
+                }
                 System.out.printf("%3d", array[i][j]);
+            }
             System.out.println();
         }
     }

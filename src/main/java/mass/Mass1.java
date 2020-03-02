@@ -1,3 +1,5 @@
+package mass;
+
 import java.util.Arrays;
 import java.util.Random;
 

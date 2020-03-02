@@ -1,3 +1,5 @@
+package mass;
+
 import java.util.Scanner;
 
 public class Mass2 {

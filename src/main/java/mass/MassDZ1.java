@@ -1,3 +1,5 @@
+package mass;
+
 import java.util.Random;
 
 public class MassDZ1 {

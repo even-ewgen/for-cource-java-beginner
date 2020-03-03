@@ -34,4 +34,20 @@ public class PascalTriangle {
             return hardShow(n);
         }
     }
+
+    public static void masterShow(int n) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < i + 1; j++) {
+                System.out.printf("%4d", getItem(i,j));
+            }
+            System.out.println();
+        }
+    }
+
+    private static int getItem(int i, int j) {
+        /*if (i == 0 || j == i) {
+            return i;
+        } else return getItem(i-1, j) + getItem(i-1, j-1);*/
+        return (j == 0 || i == j) ? 1: getItem(i-1, j) + getItem(i-1, j-1);
+    }
 }

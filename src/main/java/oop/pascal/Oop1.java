@@ -7,8 +7,8 @@ public class Oop1 {
         Scanner in = new Scanner(System.in);
         System.out.println("Введите число строк треугольника Паскаля: ");
         int n = in.nextInt();
-        //new PascalTriangle().show(n);
+        new PascalTriangle().show(n);
         //new PascalTriangle().hardShow(n);
-        new PascalTriangle().masterShow(n);
+        //new PascalTriangle().masterShow(n);
     }
 }

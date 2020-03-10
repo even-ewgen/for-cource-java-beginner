@@ -22,7 +22,7 @@ public class MassDZ2 {
                 } else {
                     array[i][j] = array[i][j - 1] + (array.length*2 - (i*2 + 1));
                 }
-                System.out.printf("%3d", array[i][j]);
+                System.out.printf("%4d", array[i][j]);
             }
             System.out.println();
         }

@@ -12,7 +12,6 @@ public class Str1 {
             String row = in.nextLine();
             //row = "А роза упала на лапу Азора";
             if (!row.isEmpty()) {
-                row = "А роза упала на лапу Азора";
                 System.out.printf("Это палиндром? %b\n",
                         isPalindrom(row.replaceAll(" ", "").toLowerCase()));
             } else {

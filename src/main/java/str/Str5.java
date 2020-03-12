@@ -16,7 +16,7 @@ public class Str5 {
                 System.out.println("Пустота не строка.");
             }
         } else {
-
+            System.out.println("Это не строка.");
         }
     }
 

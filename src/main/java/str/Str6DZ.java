@@ -1,9 +1,11 @@
 package str;
 
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Str6DZ {
-    private static String[] pat = {"у", "е", "ы", "а", "о", "э", "я", "и", "ю", "ё"};
+    private static String[] vowels = {"у", "е", "ы", "а", "о", "э", "я", "и", "ю", "ё"};
 
     public static void main(String[] arg) {
         System.out.println("Введи слово: ");
@@ -11,10 +13,10 @@ public class Str6DZ {
         if (in.hasNextLine()) {
             String wort = in.nextLine();
             //wort = "слог";
-            wort = "слово";
+            //wort = "слово";
             //wort = "прогноз";
             //wort = "транскрипция";
-            //wort = "зоомагазин";
+            wort = "заомагазин";
             if (!wort.isEmpty())
                 System.out.printf("Изменено - %s\n", prepareRow(wort));
             else System.out.println("Пустота не слово.");
@@ -22,10 +24,25 @@ public class Str6DZ {
     }
 
     private static String prepareRow(String wort) {
-        for() {
+        int count = 0;
+        for (int i = 0; i < wort.length(); i++) {
+            for (int j = 0; j < vowels.length; j++) {
+                System.out.println((vowels[j].charAt(0) + " " + wort.charAt(i)));
+                if ((vowels[j].charAt(0) == wort.charAt(i)) && (vowels[j].charAt(0) != wort.charAt(i-1))) {
+                    count++;
+                } else {
 
+                }
+            }
         }
-        wort = "";
-        return wort;
+        System.out.printf("Число слогов: %d\n", count);
+        if (count == 0 || count == 1) {
+            return wort;
+        } else {
+            String temp = "";
+
+            wort = "";
+            return wort;
+        }
     }
 }

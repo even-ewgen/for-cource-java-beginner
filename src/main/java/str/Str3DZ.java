@@ -1,6 +1,8 @@
 package str;
 
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Str3DZ {
 
@@ -9,9 +11,10 @@ public class Str3DZ {
         Scanner in = new Scanner(System.in);
         if (in.hasNextLine()) {
             String row = in.nextLine();
+            //row = "Dskvjo. Dkosjv? Dfejfo Deofpjo joepfw. Dksokijopiej! Dskjofo Dksopdjj ji jid? Dksokijopiej! Dsjvopsoejej joej jj oe!";
             if (!row.isEmpty()) {
                 System.out.printf("Изменено - %s\n",
-                        replaseFirstAndLast(row));
+                        removeEmotions(row));
             } else {
                 System.out.println("Пустота.");
             }
@@ -20,13 +23,12 @@ public class Str3DZ {
         }
     }
 
-    private static String replaseFirstAndLast(String row) {
-        String[] words = row.split(" ");
+    private static String removeEmotions(String row) {
+        Pattern pattern = Pattern.compile("(.*?[\\.\\?\\!])");
+        Matcher matcher = pattern.matcher(row);
         row = "";
-        for (String word : words) {
-            if ((word.length() == 1) || (word.toLowerCase().charAt(0) != word.toLowerCase().charAt(word.length() - 1))) {
-                row = row.concat(String.format(" %s", word));
-            }
+        while (matcher.find()) {
+            if (!matcher.group().contains("!")) row = row.concat(String.format("%s", matcher.group()));
         }
         return row;
     }

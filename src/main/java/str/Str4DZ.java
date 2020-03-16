@@ -1,5 +1,4 @@
 package str;
-
 import java.util.Scanner;
 
 public class Str4DZ {
@@ -10,8 +9,7 @@ public class Str4DZ {
         if (in.hasNextLine()) {
             String row = in.nextLine();
             if (!row.isEmpty()) {
-                System.out.printf("Корооткое слово - %s\n",
-                        isMin(row));
+                System.out.printf("Корооткое слово - %s\n", isMin(row));
             } else {
                 System.out.println("Пустота не строка.");
             }

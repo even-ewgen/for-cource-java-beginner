@@ -7,6 +7,8 @@ public class Main1 {
     public static void main(String[] arg) {
         try {
             metod();
+        } catch (MetodExeption e) {
+            System.out.printf("Ты вызываешь ошибку сама)) Полюбуйся - %s\n", e.getMessage());
         } catch (ArithmeticException e) {
             System.out.printf("Не дели на ноль %s\n", e.getMessage());
         } catch (Exception e) {
@@ -16,7 +18,7 @@ public class Main1 {
         }
     }
 
-    static void metod() {
+    static void metod() throws MetodExeption {
         try {
             int a = 5;
             int b = Integer.parseInt("data");
@@ -24,7 +26,14 @@ public class Main1 {
             System.out.println(c);
         } catch (Exception e){
             System.out.println("Error in metod");
-            throw e;
+            throw new MetodExeption("Ooops");
         }
+    }
+}
+
+class MetodExeption extends Exception {
+
+    public MetodExeption(String message){
+        super(message);
     }
 }

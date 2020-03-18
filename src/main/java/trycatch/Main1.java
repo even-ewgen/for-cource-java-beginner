@@ -17,9 +17,14 @@ public class Main1 {
     }
 
     static void metod() {
-        int a = 5;
-        int b = Integer.parseInt("data");
-        int c = a / b;
-        System.out.println(c);
+        try {
+            int a = 5;
+            int b = Integer.parseInt("data");
+            int c = a / b;
+            System.out.println(c);
+        } catch (Exception e){
+            System.out.println("Error in metod");
+            throw e;
+        }
     }
 }
